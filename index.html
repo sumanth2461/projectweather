@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>weather App</title>
+	<link rel="stylesheet" href="stylesheet.css" />
+</head>
+
+<body>
+	<div class="app-wrap">
+		<header>
+			<input type="text" autocomplete="off" class="search-box" placeholder="Search for a city">
+		</header>
+
+		<main>
+			<section class="location">
+				<div class="city">GUDIBANDA</div>
+				<div class="date" id ='time_span'><script> 
+
+                   function updateTime(){
+                    var currentTime = new Date()
+                    var hours = currentTime.getHours()
+                    var minutes = currentTime.getMinutes()
+                    if (minutes < 10){
+                        minutes = "0" + minutes
+                    }
+                    var t_str = hours + ":" + minutes + " ";
+                    if(hours > 11){
+                        t_str += "PM";
+                    } else {
+                        t_str += "AM";
+                    }
+                    document.getElementById('time_span').innerHTML = t_str;
+                }
+                setTimeout(updateTime, 1000);  
+                
+                
+                
+                </script>
+
+                </div>
+			</section>
+
+			<div class="current">
+				<div class="temp">27<span>°C</span></div>
+				<div class="weather">Sunny</div>
+				<div class="hi-low">24°C / 32°C</div>
+			</div>
+		</main>
+	</div>
+	<script src="index.js"></script>
+</body>
+
+</html>
